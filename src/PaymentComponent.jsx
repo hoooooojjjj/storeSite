@@ -20,12 +20,12 @@ function PaymentComponent() {
         gas: 210000,
         data: contract.methods
           .addCredit(
-            "오삼숙이",
+            "다성반점",
             walletAddress,
-            "private",
-            import.meta.env.VITE_PASSWORD,
+            "public",
+            "",
             web3.utils.toWei("0.1", "ether"), // 결제 금액
-            import.meta.env.VITE_STORE_ADDRESS // 가게 지갑 주소
+            "0x860E57F925F51de2b7B365c523758CD8eA8CCE35" // 가게 지갑 주소
           )
           .encodeABI(),
       };
