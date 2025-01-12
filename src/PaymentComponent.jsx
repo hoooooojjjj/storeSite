@@ -7,8 +7,8 @@ function PaymentComponent() {
 
   const handleAddCredit = async () => {
     setIsLoading(true);
-    const contractAddress = import.meta.env.VITE_CONTRACT_ADDRESS;
-    const walletAddress = import.meta.env.VITE_WALLET_ADDRESS;
+    const contractAddress = "0xe296dB5dc9779B6eEF1411966196657104F4C3D7";
+    const walletAddress = "0x2aF6d726B110747F02AFaAa9a23d63B1d85D9878";
 
     try {
       const web3 = new Web3(Web3.givenProvider);
@@ -16,7 +16,7 @@ function PaymentComponent() {
 
       const tx = {
         from: walletAddress,
-        to: import.meta.env.VITE_STORE_ADDRESS, // 가게 지갑 주소
+        to: "0xD2539f4b7aEc9d07D755c12A965e28c09a25065B", // 가게 지갑 주소
         gas: 210000,
         data: contract.methods
           .addCredit(
@@ -24,8 +24,8 @@ function PaymentComponent() {
             walletAddress,
             "private",
             import.meta.env.VITE_PASSWORD,
-            web3.utils.toWei("0.1", "ether"), // 결제 금액
-            import.meta.env.VITE_STORE_ADDRESS // 가게 지갑 주소
+            web3.utils.toWei("10000", "ether"), // 결제 금액
+            "0xD2539f4b7aEc9d07D755c12A965e28c09a25065B"
           )
           .encodeABI(),
       };
