@@ -24,8 +24,7 @@ function PaymentComponent() {
             walletAddress,
             "private",
             import.meta.env.VITE_PASSWORD,
-            web3.utils.toWei("10000", "ether"), // 결제 금액
-            "0xD2539f4b7aEc9d07D755c12A965e28c09a25065B"
+            web3.utils.toWei("10000", "ether") // 결제 금액
           )
           .encodeABI(),
       };
